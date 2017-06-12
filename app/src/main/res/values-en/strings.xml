@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">iCad</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_cadastro">Register Contact</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Strings related to login -->
+    <string name="lbl_login">User</string>
+    <string name="lbl_senha">Password</string>
+    <string name="lbl_sair">Log off</string>
+    <string name="lbl_configurar">Settings</string>
+    <string name="lbl_idioma">Language</string>
+
+    <string name="lbl_nome">Name</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_cep">Zip Code</string>
+    <string name="lbl_logradouro">Address</string>
+    <string name="lbl_numero">Number</string>
+    <string name="lbl_complemento">Complement</string>
+    <string name="lbl_bairro">District</string>
+    <string name="lbl_cidade">City</string>
+    <string name="lbl_uf">State</string>
+    <string name="lbl_telefone">Phone Number</string>
+
+    <string name="rbt_portugues">Portuguese</string>
+    <string name="rbt_ingles">English</string>
+    <string name="btn_logar">Log In</string>
+    <string name="btn_cadastro">New Register</string>
+    <string name="btn_salvar">Save</string>
+    <string name="ckb_manter_login">Remember me on this device</string>
+    <string name="msg_campo_obrigatorio">Required field!</string>
+    <string name="msg_campo_tamanho_minimo">Field must be at least 5 characters long!</string>
+    <string name="msg_login_invalido">Invalid User/Password!!</string>
+    <string name="msg_email_invalido">Invalid E-mail!</string>
+    <string name="msg_aguarde">Wait a moment, please.</string>
+    <string name="msg_buscando">Looking for the address.</string>
+    <string name="msg_endereco_erro">Address not found.</string>
+    <string name="msg_sucesso">Contact recorded successfully!</string>
+</resources>

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">iCad</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_cadastro">Cadastrar Contato</string>
+    <string name="hello_world">Olá Mundo!</string>
+
+    <!-- Strings related to login -->
+    <string name="lbl_login">Usuário</string>
+    <string name="lbl_senha">Senha</string>
+    <string name="lbl_sair">Sair</string>
+    <string name="lbl_configurar">Configurações</string>
+    <string name="lbl_idioma">Idioma</string>
+
+    <string name="lbl_nome">Nome</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_cep">CEP</string>
+    <string name="lbl_logradouro">Logradouro</string>
+    <string name="lbl_numero">Número</string>
+    <string name="lbl_complemento">Complemento</string>
+    <string name="lbl_bairro">Bairro</string>
+    <string name="lbl_cidade">Cidade</string>
+    <string name="lbl_uf">UF</string>
+    <string name="lbl_telefone">Telefone</string>
+
+    <string name="rbt_portugues">Português</string>
+    <string name="rbt_ingles">Inglês</string>
+    <string name="btn_logar">Entrar</string>
+    <string name="btn_cadastro">Cadastrar</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="ckb_manter_login">Lembrar-me neste dispositivo </string>
+    <string name="msg_campo_obrigatorio">Campo Obrigatório!</string>
+    <string name="msg_campo_tamanho_minimo">Campo deve ter no mínimo 5 caracteres!</string>
+    <string name="msg_login_invalido">Usuário/Senha inválidos!</string>
+    <string name="msg_email_invalido">E-mail inválido!</string>
+    <string name="msg_aguarde">Aguarde por favor.</string>
+    <string name="msg_buscando">Buscando o endereço.</string>
+    <string name="msg_endereco_erro">Endereço não encontrado.</string>
+    <string name="msg_sucesso">Contato gravado com sucesso!</string>
+</resources>

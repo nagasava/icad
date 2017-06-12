@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="txt_padrao">22sp</dimen>
+
+    <dimen name="padding_toast">10dp</dimen>
+    <dimen name="margin_widgets">20dp</dimen>
+    <dimen name="padding_layout">20dp</dimen>
+</resources>
