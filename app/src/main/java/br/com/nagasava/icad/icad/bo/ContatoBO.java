@@ -1,14 +1,10 @@
 package br.com.nagasava.icad.icad.bo;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 
 import br.com.nagasava.icad.icad.R;
-import br.com.nagasava.icad.icad.Util.Util;
 import br.com.nagasava.icad.icad.repository.ContatoRepository;
 import br.com.nagasava.icad.icad.validation.ContatoValidation;
-import br.com.nagasava.icad.icad.validation.LoginValidation;
 
 public class ContatoBO {
 
@@ -16,7 +12,6 @@ public class ContatoBO {
 
     public ContatoBO(Activity activity) {
         contatoRepository = new ContatoRepository(activity);
-        //contatoRepository.listarContatos(activity);
     }
 
     public boolean validarCamposContato(ContatoValidation validation) {
@@ -68,11 +63,6 @@ public class ContatoBO {
             validation.getEdtTelefone().setError( validation.getActivity().getString(R.string.msg_campo_obrigatorio));
             resultado = false;
         }
-
-        if(resultado) {
-            contatoRepository.addContato(validation);
-        }
-
         return resultado;
     }
 
@@ -81,5 +71,9 @@ public class ContatoBO {
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(regex);
         java.util.regex.Matcher m = p.matcher(email);
         return m.matches();
+    }
+
+    public void salvarContato(ContatoValidation contato) {
+        contatoRepository.salvarContato(contato);
     }
 }

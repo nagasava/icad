@@ -3,8 +3,6 @@ package br.com.nagasava.icad.icad.validation;
 import android.app.Activity;
 import android.widget.EditText;
 
-import java.io.Serializable;
-
 public class ContatoValidation {
     private EditText edtNome;
     private EditText edtEmail;
@@ -104,5 +102,21 @@ public class ContatoValidation {
 
     public void setActivity(Activity activity) {
         this.activity = activity;
+    }
+
+    @Override
+    public String toString() {
+        return "Contato{" +
+                "nome='" + edtNome.getText().toString() + '\'' +
+                ", email='" + edtEmail.getText().toString() + '\'' +
+                ", cep='" + edtCep.getText().toString() + '\'' +
+                ", logradouro='" + edtLogradouro.getText().toString() + '\'' +
+                ", numero='" + edtNumero.getText().toString() + '\'' +
+                ", complemento=" + edtComplemento.getText().toString() +
+                ", bairro=" + edtBairro.getText().toString() +
+                ", cidade=" + edtCidade.getText().toString() +
+                ", uf=" + edtUf.getText().toString() +
+                ", telefone=" +  edtTelefone.getText().toString() +
+                '}';
     }
 }

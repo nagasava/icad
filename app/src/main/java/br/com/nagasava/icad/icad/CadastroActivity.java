@@ -3,16 +3,14 @@ package br.com.nagasava.icad.icad;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.os.AsyncTask;
-
-import br.com.nagasava.icad.icad.bo.ContatoBO;
-import br.com.nagasava.icad.icad.validation.ContatoValidation;
-import br.com.nagasava.icad.icad.Util.Util;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,8 +23,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import br.com.nagasava.icad.icad.Util.Util;
+import br.com.nagasava.icad.icad.bo.ContatoBO;
+import br.com.nagasava.icad.icad.repository.ContatoRepository;
+import br.com.nagasava.icad.icad.validation.ContatoValidation;
+import br.com.nagasava.icad.icad.validation.LoginValidation;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -46,6 +47,8 @@ public class CadastroActivity extends AppCompatActivity {
     private Button btnSalvar;
 
     private ProgressDialog load;
+
+    private ContatoRepository contato;
 
     protected boolean hasConnectivity() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Activity.CONNECTIVITY_SERVICE);
@@ -79,29 +82,37 @@ public class CadastroActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ContatoValidation validation = new ContatoValidation();
-
-                validation.setEdtNome(edtNome);
-                validation.setEdtEmail(edtEmail);
-                validation.setEdtCep(edtCep);
-                validation.setEdtLogradouro(edtLogradouro);
-                validation.setEdtNumero(edtNumero);
-                validation.setEdtComplemento(edtComplemento);
-                validation.setEdtBairro(edtBairro);
-                validation.setEdtCidade(edtCidade);
-                validation.setEdtUf(edtUf);
-                validation.setEdtTelefone(edtTelefone);
-                validation.setActivity(CadastroActivity.this);
+                ContatoValidation validation = montarContato();
 
                 boolean isValido = contatoBO.validarCamposContato(validation);
 
                 if(isValido){
+                    Util.showMsgToast(CadastroActivity.this, "isValido");
+                    contatoBO.salvarContato(validation);
                     Intent i = new Intent(CadastroActivity.this, SucessoActivity.class);
                     startActivity(i);
                 }
             }
         });
+    }
 
+    private ContatoValidation montarContato() {
+        ContatoValidation validation = new ContatoValidation();
+        validation.setEdtNome(edtNome);
+        validation.setEdtEmail(edtEmail);
+        validation.setEdtCep(edtCep);
+        validation.setEdtLogradouro(edtLogradouro);
+        validation.setEdtNumero(edtNumero);
+        validation.setEdtComplemento(edtComplemento);
+        validation.setEdtBairro(edtBairro);
+        validation.setEdtCidade(edtCidade);
+        validation.setEdtUf(edtUf);
+        validation.setEdtTelefone(edtTelefone);
+        validation.setActivity(CadastroActivity.this);
+
+        Util.showMsgToast(this, validation.toString());
+
+        return validation;
     }
 
     private void consultaCep() {
