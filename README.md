@@ -1,2 +1,0 @@
-# icad
-Exemplo Cadastro Android
